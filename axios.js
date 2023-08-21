@@ -8,14 +8,8 @@ axios.defaults.paramsSerializer = (params) => {
     return qs.stringify(params, { arrayFormat: 'repeat' })
 }
 
-export const setToken = (token) => {
-    axios.defaults.headers.common['Authorization'] = token
-        ? `Token ${ token }`
-        : ''
-}
-
-setToken(import.meta.env.VITE_API_TOKEN)
-
 axios.defaults.headers.common['Content-Type'] = 'application/json'
+// axios.defaults.headers.common['X-RapidAPI-Host'] = 'v3.football.api-sports.io'
+// axios.defaults.headers.common['X-RapidAPI-Key'] = import.meta.env.VITE_API_KEY
 
 export default axios
