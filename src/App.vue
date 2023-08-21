@@ -4,9 +4,11 @@ import Header from './components/Header.vue';
 </script>
 
 <template>
-  <div class="container">
+  <div class="container mx-auto py-8">
     <Header/>
-    <RouterView />
+    <main class="overflow-hidden pt-[70px]">
+      <RouterView />
+    </main>
   </div>
 </template>
 
