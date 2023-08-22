@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'leagues',
-      component:  () => import('../views/Home.vue')
+      component:  () => import('../views/Leagues.vue')
     },
   ]
 })

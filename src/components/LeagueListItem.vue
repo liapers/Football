@@ -1,0 +1,24 @@
+[
+<template>
+  <router-link :to="{name: 'leagues'}" class="w-[30rem] border-2 border-b-4 border-gray-200 rounded-xl hover:bg-gray-50 mr-5">
+    <p class="bg-sky-500 w-fit px-4 py-1 text-sm font-bold text-white rounded-tl-lg rounded-br-xl">
+      {{ props.active ? 'Активна' : 'Неактивна' }}
+    </p>
+
+    <div class="grid grid-cols-6 p-5 gap-y-2">
+      <div>
+        <img :src="props.img" class="max-w-16 max-h-16 rounded-full bg-cover bg-center" />
+      </div>
+
+      <div class="col-span-5 md:col-span-4 ml-4">
+        <p class="text-gray-600 font-bold">{{ props.name }}</p>
+        <p class="text-gray-400">{{ props.type === 'domestic' ? 'Национальная лига' : '' }}</p>
+      </div>
+    </div>
+  </router-link>
+</template>
+
+<script setup>
+const props = defineProps(['name', 'img', 'active', 'type'])
+</script>
+]
