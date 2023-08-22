@@ -1,10 +1,11 @@
 <template>
     <div class="leageus">
         <form @submit.prevent="searchLeagues">
-            <div class="p-0 pl-7 flex justify-center">
+            <div class="p-0 pl-7 flex justify-center mb-2">
                 <label class="block p-3 rounded-2xl bg-white">
                     <span>Название лиги</span>
                     <input
+                        v-model="form.name"
                         type="text"
                         class="mt-1 border-t-0 border-l-0 border-r-0 border-b-1 outline-none border-cyan-500
                         dark:text-cyan-500 dark:placeholder-cyan-500 text-sm focus:ring-cyan-500 focus:border-cyan-500 w-full
@@ -61,6 +62,9 @@ const leageus = computed(() => {
     return leageusStore.leagues
 })
 const leageusStore = useLeaguesStore()
+const form = ref({
+    name: '',
+})
 
 let searchLeagues = (() => {
     e.preventDefault()
