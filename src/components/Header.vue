@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex items-center bg-white h-[70px] rounded-2xl mb-4">
+  <nav class="flex items-center bg-white h-[70px] rounded-2xl mb-2">
     <div class="pl-4">
       <ul
         class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
