@@ -8,6 +8,11 @@ const router = createRouter({
       name: 'leagues',
       component:  () => import('../views/Leagues.vue')
     },
+    {
+      path: '/teams/',
+      name: 'teams',
+      component:  () => import('../views/Teams.vue')
+    },
   ]
 })
 
