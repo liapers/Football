@@ -2,23 +2,31 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { defineStore } from 'pinia'
 
-export const useLeaguesStore = defineStore('leagues', (params = {current: true}) => {
+export const useLeaguesStore = defineStore('leagues', () => {
   const leagues = ref([])
   async function load() {
-
     const options = {
       method: 'GET',
-      url: 'https://footapi7.p.rapidapi.com/api/tournament/17/season/41886/team-events/total',
-      headers: {
-        'X-RapidAPI-Key': '3cc9b6f561msh61fb070cdbb8551p155c29jsnac8909be3d4f',
-        'X-RapidAPI-Host': 'footapi7.p.rapidapi.com'
-      }
+      url: '/leagues',
+      params: {api_token: import.meta.env.VITE_API_KEY}
     }
 
-    const data = await axios(options)
+    const result = await axios(options)
 
-    leagues.value = data.response
+    leagues.value = result.data.data
   }
 
-  return { leagues, load }
+  async function search(name) {
+    const options = {
+      method: 'GET',
+      url: `/leagues/search/${name}`,
+      params: {api_token: import.meta.env.VITE_API_KEY}
+    }
+
+    const result = await axios(options)
+
+    leagues.value = result.data.data
+  }
+
+  return { leagues, load, search }
 })

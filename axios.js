@@ -9,7 +9,6 @@ axios.defaults.paramsSerializer = (params) => {
 }
 
 axios.defaults.headers.common['Content-Type'] = 'application/json'
-// axios.defaults.headers.common['X-RapidAPI-Host'] = 'v3.football.api-sports.io'
-// axios.defaults.headers.common['X-RapidAPI-Key'] = import.meta.env.VITE_API_KEY
+axios.defaults.headers.common['Authorization'] = import.meta.env.VITE_API_KEY
 
 export default axios

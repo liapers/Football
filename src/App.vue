@@ -6,7 +6,7 @@ import Header from './components/Header.vue';
 <template>
   <div class="container mx-auto py-8">
     <Header/>
-    <main class="overflow-hidden pt-[50px]">
+    <main class="overflow-hidden pt-[30px]">
       <RouterView />
     </main>
   </div>
