@@ -7,8 +7,8 @@
           <router-link :to="{ name: 'leagues' }" v-slot="{ isActive, href }">
             <a :href="href"
               :class="isActive ?
-                'block py-2 pl-3 pr-4 text-white bg-black rounded md:bg-transparent md:text-black md:p-0 dark:text-white md:dark:text-[blue-500]' :
-                'block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-800 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'">
+              'border-b-2 border-transparent py-2 pl-3 pr-4 text-white md:bg-transparent md:border-green-800 md:p-0 dark:text-white':
+              'border-b-2 border-transparent text-white hover:text-white dark:hover:text-white hover:border-green-800 mx-1.5 sm:mx'">
               Лиги
             </a>
           </router-link>
@@ -17,8 +17,8 @@
           <router-link :to="{ name: 'teams' }" v-slot="{ isActive, href }">
             <a :href="href"
               :class="isActive ?
-                'block py-2 pl-3 pr-4 text-white bg-black rounded md:bg-transparent md:text-black md:p-0 dark:text-white md:dark:text-blue-500' :
-                'block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-800 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'">
+              'border-b-2 border-transparent py-2 pl-3 pr-4 text-white md:bg-transparent md:border-green-800 md:p-0 dark:text-white':
+              'border-b-2 border-transparent text-white hover:text-white dark:hover:text-white hover:border-green-800 mx-1.5 sm:mx'">
               Команды
             </a>
           </router-link>
