@@ -2,31 +2,32 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { defineStore } from 'pinia'
 
-export const useLeaguesStore = defineStore('leagues', () => {
-  const leagues = ref([])
+export const useTeamsStore = defineStore('teams', () => {
+  const teams = ref([])
+
   async function load() {
     const options = {
       method: 'GET',
-      url: '/leagues',
+      url: '/teams',
       params: {api_token: import.meta.env.VITE_API_KEY, include: 'country'}
     }
 
     const result = await axios(options)
 
-    leagues.value = result.data.data
+    teams.value = result.data.data
   }
 
   async function search(name) {
     const options = {
       method: 'GET',
-      url: `/leagues/search/${name}`,
+      url: `/teams/search/${name}`,
       params: {api_token: import.meta.env.VITE_API_KEY, include: 'country'}
     }
 
     const result = await axios(options)
 
-    leagues.value = result.data.data
+    teams.value = result.data.data
   }
 
-  return { leagues, load, search }
+  return { teams, load, search }
 })
