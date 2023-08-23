@@ -9,7 +9,7 @@ export const useTeamsStore = defineStore('teams', () => {
     const options = {
       method: 'GET',
       url: '/teams',
-      params: {api_token: import.meta.env.VITE_API_KEY}
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country'}
     }
 
     const result = await axios(options)
@@ -21,7 +21,7 @@ export const useTeamsStore = defineStore('teams', () => {
     const options = {
       method: 'GET',
       url: `/teams/search/${name}`,
-      params: {api_token: import.meta.env.VITE_API_KEY}
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country'}
     }
 
     const result = await axios(options)

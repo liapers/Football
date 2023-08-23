@@ -1,10 +1,12 @@
 <template>
     <Loader v-if="loading" />
     <DefaultSearch @submit="submit"/>
-    <ul v-if="teams.length" class="flex h-full flex-wrap justify-around">
+    
+    <ul v-if="teams.length" class="flex h-full flex-wrap">
         <TeamListItem
             v-for="t in teams" :key="t.id"
-            :img="t.logo_path" :name="t.name" :national_team="t.national_team"
+            :img="t.logo_path" :name="t.name"
+            :national_team="t.national_team" :country="t.country.data.name"
         />
     </ul>
 </template>
@@ -24,7 +26,10 @@ const teams = computed(() => {
 const teamsStore = useTeamsStore()
 
 const submit = async (value) => {
-    await teamsStore.search(value)
+    if (value)
+        await teamsStore.search(value)
+    else
+        await teamsStore.load()
 }
 onMounted(async () => {
     loading = false

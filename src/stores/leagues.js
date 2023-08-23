@@ -8,7 +8,7 @@ export const useLeaguesStore = defineStore('leagues', () => {
     const options = {
       method: 'GET',
       url: '/leagues',
-      params: {api_token: import.meta.env.VITE_API_KEY}
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country'}
     }
 
     const result = await axios(options)
@@ -20,7 +20,7 @@ export const useLeaguesStore = defineStore('leagues', () => {
     const options = {
       method: 'GET',
       url: `/leagues/search/${name}`,
-      params: {api_token: import.meta.env.VITE_API_KEY}
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country'}
     }
 
     const result = await axios(options)
