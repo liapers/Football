@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{name: 'leagues'}" class="w-[30rem] border-2 border-b-4 border-gray-200 rounded-xl hover:bg-gray-50 mb-4">
+  <router-link :to="{name: 'leagues'}" class="w-[30rem] border-2 border-b-4 border-gray-200 rounded-xl bg-white hover:bg-gray-200 mb-4 ">
     <div class="grid grid-cols-6 p-5 gap-y-2">
       <div>
         <img :src="props.img" class="max-w-16 max-h-16 rounded-full bg-cover bg-center" />
