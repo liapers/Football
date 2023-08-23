@@ -6,7 +6,7 @@
 
     <div class="grid grid-cols-6 p-5 gap-y-2">
       <div>
-        <img :src="props.img" class="max-w-16 max-h-16 rounded-full bg-cover bg-center bg-gray-200" />
+        <img :src="props.img" class="max-w-16 max-h-16 bg-cover bg-center bg-gray-200" />
       </div>
 
       <div class="col-span-5 md:col-span-4 ml-4">
