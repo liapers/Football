@@ -10,7 +10,7 @@ export const useTeamsStore = defineStore('teams', () => {
     const options = {
       method: 'GET',
       url: '/teams',
-      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country'}
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country,league'}
     }
 
     const result = await axios(options)
@@ -22,7 +22,7 @@ export const useTeamsStore = defineStore('teams', () => {
     const options = {
       method: 'GET',
       url: `/teams/search/${name}`,
-      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country'}
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country,league'}
     }
 
     const result = await axios(options)
@@ -33,8 +33,8 @@ export const useTeamsStore = defineStore('teams', () => {
   async function loadOne(id) {
     const options = {
       method: 'GET',
-      url: `/teams/search/${id}`,
-      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country'}
+      url: `/teams/${id}`,
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country,league'}
     }
 
     const result = await axios(options)
@@ -42,5 +42,5 @@ export const useTeamsStore = defineStore('teams', () => {
     team.value = result.data.data
   }
 
-  return { teams, load, loadOne, search }
+  return { teams, team, load, loadOne, search }
 })

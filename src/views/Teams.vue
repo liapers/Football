@@ -4,9 +4,11 @@
     
     <ul v-if="teams.length" class="flex h-full flex-wrap">
         <TeamListItem
-            v-for="t in teams" :key="t.id"
+            v-for="t in teams" :key="t.id" :id="t.id"
             :img="t.logo_path" :name="t.name"
-            :national_team="t.national_team" :country="t.country.data.name"
+            :national_team="t.national_team"
+            :country="t.country.data.name"
+            :league="t.league?.data?.name"
         />
     </ul>
 </template>

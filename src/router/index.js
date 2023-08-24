@@ -13,6 +13,12 @@ const router = createRouter({
       name: 'teams',
       component:  () => import('../views/Teams.vue')
     },
+    {
+      path: '/teams/:id(\\d+)+/',
+      name: 'team',
+      props: true,
+      component:  () => import('../views/Team.vue')
+    },
   ]
 })
 
