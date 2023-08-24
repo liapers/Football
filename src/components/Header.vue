@@ -9,7 +9,7 @@
               :class="isActive ?
               'border-b-2 border-transparent py-2 pl-3 pr-4 text-white md:bg-transparent md:border-green-800 md:p-0 dark:text-white':
               'border-b-2 border-transparent text-white hover:text-white dark:hover:text-white hover:border-green-800 mx-1.5 sm:mx'">
-              Лиги
+              ЛИГИ
             </a>
           </router-link>
         </li>
@@ -19,7 +19,7 @@
               :class="isActive ?
               'border-b-2 border-transparent py-2 pl-3 pr-4 text-white md:bg-transparent md:border-green-800 md:p-0 dark:text-white':
               'border-b-2 border-transparent text-white hover:text-white dark:hover:text-white hover:border-green-800 mx-1.5 sm:mx'">
-              Команды
+              КОМАНДЫ
             </a>
           </router-link>
         </li>
