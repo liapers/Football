@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 
 export const useTeamsStore = defineStore('teams', () => {
   const teams = ref([])
-  const team = ref([])
+  const team = ref(undefined)
 
   async function load() {
     const options = {
@@ -34,7 +34,7 @@ export const useTeamsStore = defineStore('teams', () => {
     const options = {
       method: 'GET',
       url: `/teams/${id}`,
-      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country,league'}
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country,league,squad.player.position'}
     }
 
     const result = await axios(options)

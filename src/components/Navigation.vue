@@ -1,8 +1,7 @@
 <template>
   <nav class="flex items-center h-[60px] rounded-2xl mb-2">
     <div class="pl-4">
-      <ul
-        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <ul class="nav-list">
         <li>
           <router-link :to="{ name: 'leagues' }" v-slot="{ isActive, href }">
             <a :href="href"
@@ -27,3 +26,9 @@
     </div>
   </nav>
 </template>
+
+<style scoped>
+.nav-list {
+  @apply font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
+}
+</style>

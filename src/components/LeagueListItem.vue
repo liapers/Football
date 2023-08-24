@@ -18,5 +18,11 @@
 </template>
 
 <script setup>
-  const props = defineProps(['name', 'img', 'active', 'type', 'country'])
+const props = defineProps({
+  name: String,
+  img: String,
+  active: Boolean,
+  type: String,
+  country: String
+})
 </script>
