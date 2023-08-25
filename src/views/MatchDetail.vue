@@ -2,19 +2,19 @@
    <div class="flex bg-white border-2 rounded-2xl py-5 px-16 justify-center" v-if="match">
         <div class="relative flex items-center justify-center">
             <router-link
-                :to="{name: 'team', params: {id: match.localteam_id}}"
+                :to="{name: 'teamDetail', params: {id: match.localteam_id}}"
                 class="bg-gray-200 rounded-xl w-full flex flex-col h-full px-3"
             >
-                <span class="flex flex-col items-center justify-center h-[96px] min-w-[96px] w-full mb-3">
+                <span class="flex flex-col items-center justify-center h-[96px] min-w-[100px] w-full mb-3">
                     <img :src="match.localTeam.data.logo_path" class="h-auto border-8 border-white rounded-full" sizes="80px" width="72" height="72"/>
                 </span>
                 <span class="text-lg font-bold text-center">{{ match.localTeam.data.name }}</span>
             </router-link>
-            <div class="bg-white border-2 rounded-xl max-w-[308px] w-full h-full pt-1.5  px-2 pb-1 m-2">
+            <div class="bg-white border-2 rounded-xl max-w-[308px] min-w-[300px] w-full h-full pt-1.5  px-2 pb-1 m-2">
                 <span class="block text-center mb-2">
                     <router-link
-                        :to="{name: 'league', params: { id: match.league.data.id }}"
-                        class="text-green-800 font-medium leading-5 mb-1"
+                        :to="{name: 'leagueDetail', params: { id: match.league.data.id }}"
+                        class="text-green-800 text-lg font-medium leading-5 mb-1"
                     >
                         {{ match.league.data.name }}
                     </router-link>
@@ -30,11 +30,11 @@
                 </div>
             </div>
             <router-link
-                :to="{name: 'team', params: {id: match.localteam_id}}"
+                :to="{name: 'teamDetail', params: {id: match.visitorteam_id}}"
                 class="bg-gray-200 rounded-xl w-full flex flex-col h-full px-3"
             >
-                <span class="flex flex-col items-center justify-center h-[96px] min-w-[96px] w-full mb-3">
-                    <img :src="match.localTeam.data.logo_path" class="h-auto border-8 border-white rounded-full" sizes="80px" width="72" height="72"/>
+                <span class="flex flex-col items-center justify-center h-[96px] min-w-[100px] w-full mb-3">
+                    <img :src="match.visitorTeam.data.logo_path" class="h-auto border-8 border-white rounded-full" sizes="80px" width="72" height="72"/>
                 </span>
                 <span class="text-lg font-bold text-center">{{ match.visitorTeam.data.name }}</span>
             </router-link>

@@ -12,12 +12,15 @@
             type="search"
             v-model="value" 
             @keyup.enter="submit"
-            class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-teal-600 focus:border-teal-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="search-input"
             placeholder="Название лиги"
             required
         />
-        <button @click="submit" type="submit"
-            class="text-white absolute right-2.5 bottom-2.5 bg-teal-600 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-sky-200 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-teal-600 dark:focus:ring-teal-600">
+        <button
+            @click="submit"
+            type="submit"
+            class="search-btn"
+        >
             Поиск
         </button>
     </div>
@@ -33,3 +36,12 @@ const submit = async () => {
     emit('submit', value.value)
 }
 </script>
+
+<style scoped>
+.search-input {
+    @apply block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-teal-600 focus:border-teal-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
+.search-btn {
+    @apply  text-white absolute right-2.5 bottom-2.5 bg-teal-600 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-sky-200 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-teal-600 dark:focus:ring-teal-600
+}
+</style>

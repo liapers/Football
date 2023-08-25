@@ -10,9 +10,9 @@ const router = createRouter({
       meta: { title: 'Лиги' }
     },
     {
-      path: '/leagues/:id(\\d+)+/',
-      name: 'league',
-      component: () => import('@/views/Leagues.vue'),
+      path: '/leagues/:id/',
+      name: 'leagueDetail',
+      component: () => import('@/views/LeagueDetail.vue'),
       meta: { title: 'Лига' }
     },
     {
@@ -22,18 +22,22 @@ const router = createRouter({
       meta: { title: 'Команды' }
     },
     {
-      path: '/match/:id(\\d+)+/',
-      name: 'match',
-      props: true,
-      component: () => import('@/views/Match.vue'),
+      path: '/teams/:id/',
+      name: 'teamDetail',
+      component: () => import('@/views/TeamDetail.vue'),
+      meta: { title: 'Команда' }
+    },
+    {
+      path: '/matches/:id/',
+      name: 'matchDetail',
+      component: () => import('@/views/MatchDetail.vue'),
       meta: { title: 'Матч' }
     },
     {
-      path: '/team/:id(\\d+)+/',
-      name: 'team',
-      props: true,
-      component: () => import('@/views/Teams.vue')
-    }
+      path: '/:catchAll(.*)',
+      name: 'notFound',
+      component: () => import('@/views/NotFound.vue'),
+    },
   ]
 })
 
