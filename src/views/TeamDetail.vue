@@ -24,7 +24,6 @@
                             {{ team?.coach?.data?.fullname }}
                         </p>
                     </div>
-
                 </div>
             </div>
 
@@ -115,6 +114,4 @@ onMounted(() => {
 .team-detail__header {
     @apply w-full rounded-2xl bg-white border-gray-200 border flex justify-between p-7
 }
-
-
 </style>
