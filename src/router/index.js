@@ -37,6 +37,7 @@ const router = createRouter({
       path: '/:catchAll(.*)',
       name: 'notFound',
       component: () => import('@/views/NotFound.vue'),
+      meta: { title: 'Страница не найдена' }
     },
   ]
 })
