@@ -50,9 +50,7 @@ import { onMounted, computed } from 'vue'
 const route = useRoute()
 let matchStore = useMatchStore()
 
-const match = computed(() => {
-    return matchStore.match
-})
+const match = computed(() =>  matchStore.match)
 
 const id = route.params.id
 
