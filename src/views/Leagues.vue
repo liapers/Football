@@ -21,9 +21,7 @@ import DefaultSearch from '../components/DefaultSearch.vue'
 
 let loading = true
 
-const leageus = computed(() => {
-    return leageusStore.leagues
-})
+const leageus = computed(() => leageusStore.leagues)
 const leageusStore = useLeaguesStore()
 
 const submit = async (value) => {

@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'leagues',
-      component:  () => import('../views/Leagues.vue')
+      component:  () => import('@/views/Leagues.vue')
     },
     {
       path: '/leagues/:id/',
@@ -16,12 +16,12 @@ const router = createRouter({
     {
       path: '/teams/',
       name: 'teams',
-      component:  () => import('../views/Teams.vue')
+      component:  () => import('@/views/Teams.vue')
     },
     {
       path: '/teams/:id/',
       name: 'teamDetail',
-      component: () => import('@/views/LeagueDetail.vue')
+      component: () => import('@/views/TeamDetail.vue')
     },
     {
       path: '/matches/:id/',
@@ -32,11 +32,6 @@ const router = createRouter({
       path: '/:catchAll(.*)',
       name: 'notFound',
       component: () => import('@/views/NotFound.vue'),
-    },
-    {
-      path: '/teams/',
-      name: 'teams',
-      component:  () => import('../views/Teams.vue')
     },
   ]
 })

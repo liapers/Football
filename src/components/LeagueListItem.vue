@@ -21,5 +21,12 @@
 </template>
 
 <script setup>
-  const props = defineProps(['id', 'name', 'img', 'active', 'type', 'country'])
+const props = defineProps({
+  id: Number,
+  name: String,
+  img: String,
+  active: Boolean,
+  type: String,
+  country: String
+})
 </script>

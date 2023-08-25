@@ -120,16 +120,17 @@ const matchesStore = useMatchesStore()
 
 const leagueId = computed(() => route.params.id)
 const leagueDetail = computed(() => leaguesStore.leagueDetail)
-
-const teams = computed(() => {
-    return teamsStore.teams.map(team => ({ 
-        ...team, 
-        coach: team.coach.data.fullname, 
-        logo: team.logo_path 
-    }))
-})
-
 const matches = computed(() => matchesStore.matches)
+const teams = computed(() => {
+    if (!teamsStore.teams)
+        return undefined
+    else 
+        return teamsStore.teams.map(team => ({ 
+            ...team, 
+            coach: team.coach?.data?.fullname, 
+            logo: team.logo_path 
+        }))
+})
 
 const tabs = [
     { label: 'Команды', name: 'teams' },
@@ -149,7 +150,7 @@ const changeTab = async tabName => {
 const isTabActive = tabName => activeTabName.value === tabName
 
 const loadByActiveTab = async () => {
-    if (activeTabName.value === 'teams' && !teams.value.length)
+    if (activeTabName.value === 'teams' && !teams.value)
         await loadTeams()
 
     else if (activeTabName.value === 'matches' && !matches.value.length)
