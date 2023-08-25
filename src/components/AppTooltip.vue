@@ -3,7 +3,7 @@
         <slot />
         <div
             :class="`tooltip-placement-${ props.placement } tooltip-theme-${ props.theme }`"
-            class="absolute z-9 whitespace-nowrap rounded px-3 py-2 text-sm font-semibold 
+            class="absolute z-50 whitespace-nowrap rounded px-3 py-2 text-sm font-semibold 
             opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
             <span
@@ -53,10 +53,10 @@ const props = defineProps({
 	@apply left-full top-1/2 -translate-y-1/2 ml-3;
 }
 .tooltip-theme-dark {
-	@apply text-white bg-[#25293b];
+	@apply text-white bg-gray-900;
 }
 .tooltip-theme-light {
-	@apply text-[#25293b] border bg-white;
+	@apply text-gray-900 border bg-white;
 }
 .tooltip-arrow-placement-top {
 	@apply -bottom-1 left-1/2 -translate-x-1/2 border-b border-r;
@@ -71,7 +71,7 @@ const props = defineProps({
 	@apply -left-1 top-1/2 -translate-y-1/2 border-b border-l;
 }
 .tooltip-arrow-theme-dark {
-	@apply bg-[#25293b] border-[#25293b];
+	@apply bg-gray-900 border-gray-900;
 }
 .tooltip-arrow-theme-light {
 	@apply bg-white;

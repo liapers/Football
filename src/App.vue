@@ -6,7 +6,7 @@ import Navigation from './components/Navigation.vue'
 <template>
   <div class="container mx-auto py-8">
     <Navigation/>
-    <main class="overflow-hidden pt-[30px] h-full">
+    <main class="pt-[30px] h-full">
       <RouterView />
     </main>
   </div>

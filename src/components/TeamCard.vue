@@ -1,21 +1,24 @@
 <template>
-    <div class="min-w-[144px] basis-1/5 grow text-center text-gray-500 dark:text-gray-400">
-        <img 
-            class="mx-auto mb-4 w-36 h-36 rounded-full" 
-            :src="props.logo" 
+    <router-link
+        :to="{ name: 'teamDetail', params: { id: props.id } }"
+        class="card-team"
+    >
+        <img
+            class="card-team__logo"
+            :src="props.logo"
             :alt="props.name"
         >
 
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <router-link :to="{ name: 'teamDetail', params: { id: props.id } }">
-                {{ props.name }}
-            </router-link>
-        </h3>
+        <h2 class="card-team__name">
+            {{ props.name }}
+        </h2>
 
         <AppTooltip content="Тренер" placement="bottom">
-            <p>{{ coach }}</p>
+            <p class="card-team__coach">
+                {{ coach }}
+            </p>
         </AppTooltip>
-    </div>
+    </router-link>
 </template>
 
 <script setup>
@@ -28,3 +31,19 @@ const props = defineProps({
     coach: String,
 })
 </script>
+
+<style scoped>
+.card-team {
+    @apply min-w-[212px] w-[212px] max-w-[292px] flex-auto basis-1/6 mx-auto
+        bg-white rounded-2xl shadow-md p-5 text-center hover:bg-gray-200
+}
+.card-team__logo {
+    @apply bg-gray-600 w-32 h-32 rounded-full mx-auto border-2 border-gray-600
+}
+.card-team__name {
+    @apply text-gray-900 text-2xl font-semibold mt-3
+}
+.card-team__coach {
+    @apply text-gray-600 mt-1
+}
+</style>

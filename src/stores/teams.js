@@ -3,7 +3,7 @@ import axios from 'axios'
 import { defineStore } from 'pinia'
 
 export const useTeamsStore = defineStore('teams', () => {
-  const teams = ref([])
+  const teams = ref(undefined)
   const team = ref(undefined)
 
   async function load() {
@@ -34,13 +34,25 @@ export const useTeamsStore = defineStore('teams', () => {
     const options = {
       method: 'GET',
       url: `/teams/${id}`,
-      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country,league,squad.player.position'}
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'country,league,squad.player.position,coach'}
     }
 
     const result = await axios(options)
-
     team.value = result.data.data
   }
+      
 
-  return { teams, team, load, loadOne, search }
+  async function loadBySeason(seasonId) {
+    const options = {
+      method: 'GET',
+      url: `/teams/season/${ seasonId }`,
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'stats,coach'}
+
+    }
+
+    const result = await axios(options)
+    teams.value = result.data.data
+  }
+
+  return { teams, team, load, loadOne, search, loadBySeason }
 })

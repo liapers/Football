@@ -4,7 +4,7 @@
         
     <ul v-if="leageus.length" class="flex">
     <LeagueListItem
-        v-for="l in leageus" :key="l.id"
+        v-for="l in leageus" :key="l.id" :id="l.id"
         :img="l.logo_path" :name="l.name"
         :active="l.active" :type="l.type"
         :country="l.country.data.name"
