@@ -29,5 +29,17 @@ export const useTeamsStore = defineStore('teams', () => {
     teams.value = result.data.data
   }
 
-  return { teams, load, search }
+  async function loadBySeason(seasonId) {
+    const options = {
+      method: 'GET',
+      url: `/teams/season/${ seasonId }`,
+      params: {api_token: import.meta.env.VITE_API_KEY, include: 'stats,coach'}
+    }
+
+    const result = await axios(options)
+
+    teams.value = result.data.data
+  }
+
+  return { teams, load, search, loadBySeason }
 })
